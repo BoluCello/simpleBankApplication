@@ -1,0 +1,70 @@
+###
+GET http://localhost:8080/customers
+
+###
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "name": "Frodo Baggins",
+  "email": "fbagg@gmail.com"
+}
+
+###
+GET http://localhost:8080/customers/1
+
+###
+DELETE http://localhost:8080/customers/1
+
+###
+GET http://localhost:8080/customers
+
+###
+
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "name": "Pippin Took",
+  "email": "ptook@gmail.com"
+}
+
+
+###
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "name": "Aragon",
+  "email": "argon@gmail.com"
+}
+
+###
+GET http://localhost:8080/customers/8
+
+###
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "name": "Bilbo Baggins",
+  "email": "bilbagg@gmail.com"
+}
+
+###
+DELETE http://localhost:8080/customers
+
+###
+POST http://localhost:8080/customers
+Content-Type: application/json
+
+{
+  "name": "Samwise Gamgee",
+  "email": "sgamgg@gmail.com"
+}
+
+###
+DELETE http://localhost:8080/customers/54567
+
+###
+GET http://localhost:8080/customers
