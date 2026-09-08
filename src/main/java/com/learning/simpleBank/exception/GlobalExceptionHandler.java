@@ -14,6 +14,12 @@ public class GlobalExceptionHandler {
         return e.getMessage();
     }
 
+    @ExceptionHandler(CustomerAlreadyExistsException.class)
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public String handleCustomerAlreadyExistsException(CustomerAlreadyExistsException e) {
+        return e.getMessage();
+    }
+
 
 
 

@@ -1,5 +1,6 @@
 package com.learning.simpleBank.service;
 
+import com.learning.simpleBank.exception.CustomerAlreadyExistsException;
 import com.learning.simpleBank.exception.CustomerNotFoundException;
 import com.learning.simpleBank.model.Customer;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import java.util.Map;
 @Service
 public class CustomerService {
 
-    private Map<Long, Customer> customers =  new HashMap<>();
+    private final Map<Long, Customer> customers =  new HashMap<>();
     private Long nextId = 1L;
 
 
@@ -24,6 +25,13 @@ public class CustomerService {
 //    technically to accept the deserialized Java Object
 
     public Customer createCustomer(Customer customer) {
+
+        for(Customer existingCustomer : customers.values()) {
+            if(existingCustomer.getEmail().equalsIgnoreCase(customer.getEmail())) {
+                throw new CustomerAlreadyExistsException("This customer already exists");
+            }
+        }
+
         Long id = nextId;
         nextId++;
         Customer customerWithId = new Customer(id, customer.getName(), customer.getEmail());
