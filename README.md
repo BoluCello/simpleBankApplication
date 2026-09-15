@@ -320,4 +320,4 @@ The project will eventually be expanded to explore additional backend concepts, 
 
 The goal of this project is not simply to build a CRUD application, but to progressively transform a simple Spring Boot application into a more realistic backend system while understanding **why each architectural decision is made**.
 
-## Author **Boluwatife Akintunde**
+## Author: **Boluwatife Akintunde**
